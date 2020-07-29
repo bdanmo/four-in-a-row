@@ -1,0 +1,6 @@
+Proposed classes:
+  - Game
+  - Gameboard
+    - gameboard has Spaces
+  - Player
+    - player has Tokens (game pieces)
