@@ -1,6 +1,22 @@
 Proposed classes:
   - Game
+
   - Gameboard
-    - gameboard has Spaces
+
+  - Spaces
+      
   - Player
-    - player has Tokens (game pieces)
+    - properties:
+      - name/id
+      - color
+      - isTurn
+      - tokens
+    - methods:
+      - 
+
+  - Tokens (game pieces)
+    - state: 
+    - behavior:
+      - move right
+      - move left
+      - drop
