@@ -4,14 +4,20 @@ class Player {
     this.id = id;
     this.color = color;
     this.active = false;
-    this.tokens = collectTokens(21);
+    this.tokens = this.collectTokens(21);
   }
 
+  /**
+   * Creates token objects for player
+   * @param   {integer}   num - Number of token objects to be created
+   * @return  {array}     tokens - an array of new Token class instances
+   */
   collectTokens(num) {
     const tokens = [];
-    for (i = 0; i < num; i++) {
-      token = new Token(this, i);
+    for (let i = 0; i < num; i++) {
+      let token = new Token(this, i);
       tokens.push(token);
     }
+    return tokens;
   }
 }
