@@ -2,8 +2,8 @@
 class Board {
   /** Creates a board */
   constructor() {
-    this.rows = 6;
     this.columns = 7;
+    this.rows = 6;
     this.spaces = this.createSpaces(this.columns, this.rows);
   }
 
@@ -16,8 +16,8 @@ class Board {
   createSpaces(x, y) {
     const spaces = [];
     for (let i = 0; i < x; i++) {
-      for (let i = 0; i < y; i++) {
-        let space = new Space(x, y);
+      for (let j = 0; j < y; j++) {
+        let space = new Space(i + 1, j + 1);
         spaces.push(space);
       }
     }
