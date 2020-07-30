@@ -1,4 +1,6 @@
+/** Class representing a game board */
 class Board {
+  /** Creates a board */
   constructor() {
     this.rows = 6;
     this.columns = 7;
