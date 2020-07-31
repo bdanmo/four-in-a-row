@@ -1,25 +1,28 @@
 /** Class representing a game board */
 class Board {
-  /** Creates a board */
   constructor() {
     this.columns = 7;
     this.rows = 6;
-    this.spaces = this.createSpaces(this.columns, this.rows);
+    this.spaces = this.createSpaces();
+    this.token = null;
   }
 
   /**
-   *
-   * @param {number} x - number of columns/spaces on the x axis
-   * @param {number} y - number of rows/spaces on the y axis
-   * @returns {Array} spaces - an array of instances of the Space class
+   * Creates a 2D array of spaces on the game board
+   * @returns {Array} spaces - a 2D array of instances of the Space class
    */
-  createSpaces(x, y) {
+  createSpaces() {
     const spaces = [];
-    for (let i = 0; i < x; i++) {
-      for (let j = 0; j < y; j++) {
-        let space = new Space(i + 1, j + 1);
-        spaces.push(space);
+
+    for (let x = 0; x < this.columns; x++) {
+      let column = [];
+
+      for (let y = 0; y < this.rows; y++) {
+        let space = new Space(x, y);
+        column.push(space);
       }
+
+      spaces.push(column);
     }
     return spaces;
   }
