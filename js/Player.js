@@ -1,4 +1,11 @@
 class Player {
+  /**
+   * A constructor for the Player class
+   * @param {String} name
+   * @param {Number} id
+   * @param {String} color
+   * @param {Boolean} active
+   */
   constructor(name, id, color, active = false) {
     this.name = name;
     this.id = id;
