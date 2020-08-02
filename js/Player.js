@@ -16,7 +16,7 @@ class Player {
 
   /**
    * Gets tokens that haven't been dropped.
-   * @return {array} An array of unused tokens.
+   * @return {array} unusedTokens - An array of unused tokens.
    */
   get unusedTokens() {
     return this.tokens.filter(token => !token.dropped)
@@ -24,7 +24,7 @@ class Player {
 
   /**
    * Gets the first unused token from the array of unused tokens.
-   * @return {object} First token object in the array of unused tokens.
+   * @return {object} activeToken - First token object in the array of unused tokens.
    */
   get activeToken() {
     return this.unusedTokens[0];
