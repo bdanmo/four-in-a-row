@@ -41,6 +41,6 @@ class Player {
    * @return {object} First token object in the array of unused tokens.
    */
   get activetoken() {
-    return this.unusedTokens.shift();
+    return this.unusedTokens[0];
   }
 }
