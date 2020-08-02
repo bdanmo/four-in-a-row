@@ -12,7 +12,7 @@ class Board {
    * @returns {Array} spaces - a 2D array representing columns full of Space objects
    */
   createSpaces() {
-    const spaces = [];
+    const columnsOfSpaces = [];
 
     for (let x = 0; x < this.columns; x++) {
       let column = [];
@@ -22,15 +22,15 @@ class Board {
         column.push(space);
       }
 
-      spaces.push(column);
+      columnsOfSpaces.push(column);
     }
-    return spaces;
+    return columnsOfSpaces;
   }
 
   renderHTMLboard() {
     this.columnsOfSpaces.forEach((column) => {
       column.forEach((space) => {
-        space.drawSVGspace;
+        space.drawSVGspace();
       });
     });
   }

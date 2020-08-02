@@ -22,6 +22,6 @@ class Game {
   startGame() {
     console.log("Game Start!");
     const board = new Board();
-    board.renderHTMLboard;
+    board.renderHTMLboard();
   }
 }
