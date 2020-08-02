@@ -1,7 +1,7 @@
 class Game {
   constructor() {
     this.board = new Board();
-    this.players = createPlayers();
+    this.players = this.createPlayers();
     this.ready = null;
   }
 
@@ -16,5 +16,9 @@ class Game {
     ];
 
     return players;
+  }
+
+  startGame() {
+    console.log("Game Start!");
   }
 }
