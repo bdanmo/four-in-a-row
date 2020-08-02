@@ -27,4 +27,15 @@ class Player {
     }
     return tokens;
   }
+
+  get unusedTokens() {
+    const unused = this.tokens.filter(token => {
+      return token.dropped = false;
+    });
+    return unused;
+  }
+
+  get activetoken() {
+    return this.unusedTokens.shift();
+  }
 }
