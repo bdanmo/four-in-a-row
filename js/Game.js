@@ -18,6 +18,7 @@ class Game {
     return players;
   }
 
+  /** Gets game ready for play */
   startGame() {
     console.log("Game Start!");
   }
