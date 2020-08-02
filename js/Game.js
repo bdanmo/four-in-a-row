@@ -21,5 +21,7 @@ class Game {
   /** Gets game ready for play */
   startGame() {
     console.log("Game Start!");
+    const board = new Board();
+    board.renderHTMLboard;
   }
 }

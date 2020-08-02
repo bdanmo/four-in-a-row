@@ -3,13 +3,13 @@ class Board {
   constructor() {
     this.columns = 7;
     this.rows = 6;
-    this.spaces = this.createSpaces();
+    this.columnsOfSpaces = this.createSpaces();
     this.token = null;
   }
 
   /**
    * Creates a 2D array of spaces on the game board
-   * @returns {Array} spaces - a 2D array of instances of the Space class
+   * @returns {Array} spaces - a 2D array representing columns full of Space objects
    */
   createSpaces() {
     const spaces = [];
@@ -25,5 +25,13 @@ class Board {
       spaces.push(column);
     }
     return spaces;
+  }
+
+  renderHTMLboard() {
+    this.spaces.forEach((column) => {
+      column.forEach((space) => {
+        space.drawSVGspace;
+      });
+    });
   }
 }
