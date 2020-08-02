@@ -24,4 +24,8 @@ class Game {
     const board = new Board();
     board.renderHTMLboard();
   }
+
+  get activePlayer() {
+    return this.players.find(player => player.active = true)
+  }
 }
