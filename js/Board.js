@@ -28,7 +28,7 @@ class Board {
   }
 
   renderHTMLboard() {
-    this.spaces.forEach((column) => {
+    this.columnsOfSpaces.forEach((column) => {
       column.forEach((space) => {
         space.drawSVGspace;
       });
