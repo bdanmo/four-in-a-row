@@ -40,7 +40,7 @@ class Player {
    * Gets the first unused token from the array of unused tokens.
    * @return {object} First token object in the array of unused tokens.
    */
-  get activetoken() {
+  get activeToken() {
     return this.unusedTokens[0];
   }
 }
