@@ -1,4 +1,10 @@
+/** A class representing a token. */
 class Token {
+  /**
+   * Creates a new instance of the Token class.
+   * @param {Player} owner 
+   * @param {number} index 
+   */
   constructor(owner, index) {
     this.owner = owner;
     this.id = `token-${index}-${owner.id}`;

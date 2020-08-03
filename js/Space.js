@@ -1,7 +1,7 @@
 /** A class representing a space in the game board */
 class Space {
   /**
-   * Creates a space
+   * Creates a new instance of the Player class.
    * @param {number} x
    * @param {number} y
    */

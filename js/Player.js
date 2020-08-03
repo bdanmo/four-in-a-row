@@ -1,6 +1,6 @@
 class Player {
   /**
-   * A constructor for the Player class
+   * Creates an new instance of the Player class.
    * @param {String} name
    * @param {Number} id
    * @param {String} color
