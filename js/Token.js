@@ -1,4 +1,4 @@
-/** A class representing a token. */
+/** A class representing a player's token. */
 class Token {
   /**
    * Creates a new instance of the Token class.

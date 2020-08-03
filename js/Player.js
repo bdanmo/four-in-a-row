@@ -1,3 +1,4 @@
+/** A class representing a Player in the game. */
 class Player {
   /**
    * Creates an new instance of the Player class.
