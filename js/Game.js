@@ -29,11 +29,8 @@ class Game {
   /** Gets game ready for play */
   startGame() {
     console.log("Game Start!");
-    const board = new Board();
-    const activePlayer = this.activePlayer;
-    const activeToken = activePlayer.activeToken;
-    board.drawHTMLboard();
-    activeToken.drawHTMLtoken();
+    this.board.drawHTMLboard();
+    this.activePlayer.activeToken.drawHTMLtoken();
     this.ready = true;
   }
 }
