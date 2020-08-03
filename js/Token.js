@@ -6,12 +6,18 @@ class Token {
     this.dropped = false;
   }
 
-  createHTMLtoken() {
+  /**
+   * Creates an HTML token, appends it to the game board underlay, and returns the token div.
+   * @return {HTMLDivElement} tokenDiv - the div representing the token.
+   */
+  drawHTMLtoken() {
     const tokenDiv = document.createElement("div");
     tokenDiv.setAttribute("id", this.id);
     tokenDiv.setAttribute("class", "token");
     tokenDiv.style.backgroundColor = this.color;
     document.getElementById("game-board-underlay").appendChild(tokenDiv);
+
+    return tokenDiv;
   }
 
   get htmlToken() {
