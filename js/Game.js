@@ -30,6 +30,10 @@ class Game {
   startGame() {
     console.log("Game Start!");
     const board = new Board();
-    board.renderHTMLboard();
+    const activePlayer = this.activePlayer;
+    const activeToken = activePlayer.activeToken;
+    board.drawHTMLboard();
+    activeToken.drawHTMLtoken();
+    this.ready = true;
   }
 }
