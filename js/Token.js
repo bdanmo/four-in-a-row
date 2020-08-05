@@ -9,6 +9,7 @@ class Token {
     this.owner = owner;
     this.id = `token-${index}-${owner.id}`;
     this.color = this.owner.color;
+    this.columnLocation = 0;
     this.dropped = false;
   }
 
@@ -20,8 +21,12 @@ class Token {
     return this.createHTMLtoken();
   }
 
+  /** 
+   * Gets left offset of html element.
+   * @return  {number}   Left offset of token object's htmlToken.
+   */
   get offsetLeft() {
-
+    return this.htmlToken.offsetLeft();
   }
 
   /**
