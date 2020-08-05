@@ -8,5 +8,5 @@ beginButton.addEventListener("click", function () {
 });
 
 document.addEventListener('keydown', function (event) {
-  game.handleKeydown(e); //outputs a string naming the pressed key 
+  game.handleKeydown(event); //outputs a string naming the pressed key 
 });
