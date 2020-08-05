@@ -13,6 +13,18 @@ class Token {
   }
 
   /**
+   * A getter for the HTML token
+   * @return  {HTMLDivElement}  The HTML div element representing a player token.  
+   */
+  get htmlToken() {
+    return this.createHTMLtoken();
+  }
+
+  get offsetLeft() {
+
+  }
+
+  /**
    * Creates an HTML token, appends it to the game board underlay, and returns the token div.
    * @return {HTMLDivElement} tokenDiv - the div representing the token.
    */
@@ -24,9 +36,5 @@ class Token {
     document.getElementById("game-board-underlay").appendChild(tokenDiv);
 
     return tokenDiv;
-  }
-
-  get htmlToken() {
-    return this.createHTMLtoken();
   }
 }
