@@ -11,6 +11,7 @@ class Token {
     this.color = this.owner.color;
     this.columnLocation = 0;
     this.dropped = false;
+    this._HTMLtoken = null;
   }
 
   /**
@@ -18,7 +19,7 @@ class Token {
    * @return  {HTMLDivElement}  The HTML div element representing a player token.  
    */
   get htmlToken() {
-    return this.createHTMLtoken();
+    return this._HTMLtoken;
   }
 
   /** 
@@ -40,6 +41,13 @@ class Token {
     tokenDiv.style.backgroundColor = this.color;
     document.getElementById("game-board-underlay").appendChild(tokenDiv);
 
-    return tokenDiv;
+    this._HTMLtoken = tokenDiv;
+  }
+
+  moveLeft() {
+    if (this.columnLocation > 0) {
+      this.columnLocation--
+      this._HTMLtoken.offsetLeft += '76px';
+    }
   }
 }
