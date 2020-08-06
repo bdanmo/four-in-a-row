@@ -11,15 +11,14 @@ class Token {
     this.color = this.owner.color;
     this.columnLocation = 0;
     this.dropped = false;
-    this._HTMLtoken = null;
   }
 
   /**
-   * A getter for the HTML token
-   * @return  {HTMLDivElement}  The HTML div element representing a player token.  
+   * A getter for the associated HTML token
+   * @return  {element}  The HTML div element representing a player token.  
    */
   get htmlToken() {
-    return this._HTMLtoken;
+    return document.getElementById(this.id);
   }
 
   /** 
@@ -32,7 +31,7 @@ class Token {
 
   /**
    * Creates an HTML token, appends it to the game board underlay, and returns the token div.
-   * @return {HTMLDivElement} tokenDiv - the div representing the token.
+   * @return {element} tokenDiv - the div representing the token.
    */
   drawHTMLtoken() {
     const tokenDiv = document.createElement("div");
@@ -40,13 +39,11 @@ class Token {
     tokenDiv.setAttribute("class", "token");
     tokenDiv.style.backgroundColor = this.color;
     document.getElementById("game-board-underlay").appendChild(tokenDiv);
-
-    this._HTMLtoken = tokenDiv;
   }
 
   /** 
-   * Moves html token one column to right.
-   * @param   {number}    columns - number of columns in the game board
+   * Gets left offset of html element.
+   * @return  {number}   Left offset of token object's htmlToken.
    */
   moveLeft() {
     if (this.columnLocation > 0) {
