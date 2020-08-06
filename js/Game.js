@@ -14,7 +14,7 @@ class Game {
   }
 
   /**
-   * Creates two player objects
+   * Creates two player objects, p1 is automatically set to actives
    * @return  {Array}  An array of two Player objects.
    */
   createPlayers() {
@@ -41,10 +41,13 @@ class Game {
   handleKeydown(e) {
     if (this.ready) {
       if (e.key === 'ArrowLeft') {
-        //move token left
+        console.log('left!');
+        this.activePlayer.activeToken.moveLeft();
       } else if (e.key === 'ArrowRight') {
-        //move token right  
+        console.log('right!');
+        this.activePlayer.activeToken.moveRight(this.board.columns);
       } else if (e.key === 'ArrowDown') {
+        console.log('drop!');
         //play token
       }
     }
