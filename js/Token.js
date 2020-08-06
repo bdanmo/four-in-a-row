@@ -53,10 +53,10 @@ class Token {
 
   /** 
    * Moves html token one column to right.
-   * @param   {number}    rightLimit number of columns in the game board, the farthest a token can move right
+   * @param   {number}    columns number of columns in the game board, the farthest a token can move right
    */
-  moveRight(rightLimit) {
-    if (this.columnLocation < rightLimit - 1) {
+  moveRight(columns) {
+    if (this.columnLocation < columns - 1) {
       this.columnLocation++
       this.htmlToken.style.left = this.offsetLeft + 76;
     }
