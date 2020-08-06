@@ -44,9 +44,24 @@ class Token {
     this._HTMLtoken = tokenDiv;
   }
 
+  /** 
+   * Moves html token one column to right.
+   * @param   {number}    columns - number of columns in the game board
+   */
   moveLeft() {
     if (this.columnLocation > 0) {
       this.columnLocation--
+      this._HTMLtoken.offsetLeft -= '76px';
+    }
+  }
+
+  /** 
+   * Moves html token one column to right.
+   * @param   {number}    rightLimit number of columns in the game board, the farthest a token can move right
+   */
+  moveRight(rightLimit) {
+    if (this.columnLocation < rightLimit) {
+      this.columnLocation++
       this._HTMLtoken.offsetLeft += '76px';
     }
   }
