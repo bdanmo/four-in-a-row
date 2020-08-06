@@ -26,7 +26,7 @@ class Token {
    * @return  {number}   Left offset of token object's htmlToken.
    */
   get offsetLeft() {
-    return this.htmlToken.offsetLeft();
+    return this.htmlToken.offsetLeft;
   }
 
   /**
@@ -42,13 +42,12 @@ class Token {
   }
 
   /** 
-   * Gets left offset of html element.
-   * @return  {number}   Left offset of token object's htmlToken.
+   * Moves the token one column to the left.
    */
   moveLeft() {
     if (this.columnLocation > 0) {
       this.columnLocation--
-      this._HTMLtoken.offsetLeft -= '76px';
+      this.htmlToken.style.left = this.offsetLeft - 76;
     }
   }
 
@@ -57,9 +56,9 @@ class Token {
    * @param   {number}    rightLimit number of columns in the game board, the farthest a token can move right
    */
   moveRight(rightLimit) {
-    if (this.columnLocation < rightLimit) {
+    if (this.columnLocation < rightLimit - 1) {
       this.columnLocation++
-      this._HTMLtoken.offsetLeft += '76px';
+      this.htmlToken.style.left = this.offsetLeft + 76;
     }
   }
 }
