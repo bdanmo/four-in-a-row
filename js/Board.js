@@ -6,10 +6,6 @@ class Board {
     this.spaces = this.createSpaces();
   }
 
-  nextSpace(column) {
-    return this.spaces[column].pop();
-  }
-
   /**
    * Creates a 2D array of spaces on the game board
    * @returns {Array} spaces - a 2D array representing columns full of Space objects
