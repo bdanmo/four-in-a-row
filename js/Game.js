@@ -45,8 +45,7 @@ class Game {
       } else if (e.key === 'ArrowRight') {
         this.activePlayer.activeToken.moveRight(this.board.columns);
       } else if (e.key === 'ArrowDown') {
-        console.log('drop!');
-        //play token
+        this.activePlayer.activeToken.drop();
       }
     }
   }
