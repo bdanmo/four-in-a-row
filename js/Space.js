@@ -11,6 +11,7 @@ class Space {
     this.id = `space-${x}-${y}`;
     this.diameter = 76;
     this.radius = this.diameter / 2;
+    this.token = null;
   }
 
   /** Draws an SVG space associated with the instance the method is called on. */
