@@ -43,6 +43,10 @@ class Game {
     this.ready = true;
   }
 
+  playToken() {
+
+  }
+
   /**
    * Branches code, depending on what key player presses
    * @param   {Object}    e - Keydown event object
