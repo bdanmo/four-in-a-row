@@ -64,7 +64,7 @@ class Token {
 
   /** 
    * Drops html token into targeted board space.
-   * @param   {Object}   target - Targeted space for dropped token.
+   * @param   {Space}   target - Targeted space for dropped token.
    * @param   {function} reset  - The reset function to call after the drop animation has completed.
    */
   drop(target, reset) {
