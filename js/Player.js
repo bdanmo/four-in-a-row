@@ -45,5 +45,4 @@ class Player {
     return tokens;
   }
 
-
 }
