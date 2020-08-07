@@ -13,6 +13,10 @@ class Game {
     return this.players.find(player => player.active = true)
   }
 
+  get columnLocation() {
+    return this.activePlayer.activeToken.columnLocation;
+  }
+
   /**
    * Creates two player objects, p1 is automatically set to actives
    * @return  {Array}  An array of two Player objects.
@@ -45,7 +49,7 @@ class Game {
       } else if (e.key === 'ArrowRight') {
         this.activePlayer.activeToken.moveRight(this.board.columns);
       } else if (e.key === 'ArrowDown') {
-        this.activePlayer.activeToken.drop();
+        this.activePlayer.activeToken.drop(this.board.nextSpace(this.columnLocation));
       }
     }
   }
