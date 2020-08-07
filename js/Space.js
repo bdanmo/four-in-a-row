@@ -29,4 +29,5 @@ class Space {
 
     document.getElementById("mask").appendChild(svgSpace);
   }
+
 }
