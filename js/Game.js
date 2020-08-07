@@ -35,13 +35,13 @@ class Game {
   }
 
   playToken() {
-    const columnLocation = this.activePlayer.activeToken.columnLocation,
-      column = this.board.spaces[columnLocation],
-      targetSpace = column.pop();
+    const activeToken = this.activePlayer.activeToken;
+    const targetColumn = this.board.spaces[activeToken.columnLocation];
+    const targetSpace = targetColumn.pop();
 
-    if (column.length) {
+    if (targetColumn.length) {
       this.ready = false;
-      this.activePlayer.activeToken.drop(targetSpace, function () {
+      activeToken.drop(targetSpace, function () {
         console.log('Reset!')
       });
     }
