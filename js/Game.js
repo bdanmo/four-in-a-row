@@ -48,9 +48,10 @@ class Game {
     if (targetSpace) {
       this.ready = false;
       activeToken.drop(targetSpace, function () {
-        console.log(targetSpace);
+        console.log('Reset!');
       });
       targetSpace.token = activeToken;
+      console.log(targetSpace);
     }
   }
 
