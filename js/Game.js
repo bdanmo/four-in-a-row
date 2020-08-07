@@ -37,7 +37,7 @@ class Game {
   playToken() {
     const columnLocation = this.activePlayer.activeToken.columnLocation,
       column = this.board.spaces[columnLocation],
-      targetSpace = this.board.nextSpace(columnLocation);
+      targetSpace = column.pop();
 
     if (column.length) {
       this.ready = false;
