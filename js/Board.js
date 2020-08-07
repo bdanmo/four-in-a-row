@@ -7,6 +7,10 @@ class Board {
     this.token = null;
   }
 
+  get nextSpace() {
+    //provide next space
+  }
+
   /**
    * Creates a 2D array of spaces on the game board
    * @returns {Array} spaces - a 2D array representing columns full of Space objects
