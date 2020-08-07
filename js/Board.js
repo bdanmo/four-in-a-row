@@ -4,7 +4,6 @@ class Board {
     this.columns = 7;
     this.rows = 6;
     this.spaces = this.createSpaces();
-    this.token = null;
   }
 
   nextSpace(column) {
