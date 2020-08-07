@@ -7,8 +7,8 @@ class Board {
     this.token = null;
   }
 
-  get nextSpace() {
-    //provide next space
+  nextSpace(column) {
+    return this.spaces[column].pop();
   }
 
   /**
