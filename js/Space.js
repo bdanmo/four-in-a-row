@@ -30,4 +30,18 @@ class Space {
     document.getElementById("mask").appendChild(svgSpace);
   }
 
+  /**
+   * Checks if space has an associated token to find its owner
+   * @return  {(null|Object)} Returns null or the owner object of the space's associated token.
+   */
+  get owner() {
+    let owner;
+    if (this.token) {
+      owner = this.token.owner;
+      return owner;
+    } else {
+      return null;
+    }
+  }
+
 }
