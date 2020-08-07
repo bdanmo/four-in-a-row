@@ -50,6 +50,7 @@ class Game {
       activeToken.drop(targetSpace, function () {
         console.log(targetSpace);
       });
+      targetSpace.token = activeToken;
     }
   }
 
