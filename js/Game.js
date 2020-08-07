@@ -13,6 +13,11 @@ class Game {
     return this.players.find(player => player.active = true)
   }
 
+  /**
+   * Gets the 0-indexed column locaiton of the active token.
+   * @return {number} columnLocation - the current location of the token currently in play.
+   */
+
   get columnLocation() {
     return this.activePlayer.activeToken.columnLocation;
   }
