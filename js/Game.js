@@ -14,15 +14,6 @@ class Game {
   }
 
   /**
-   * Gets the 0-indexed column locaiton of the active token.
-   * @return {number} columnLocation - the current location of the token currently in play.
-   */
-
-  get columnLocation() {
-    return this.activePlayer.activeToken.columnLocation;
-  }
-
-  /**
    * Creates two player objects, p1 is automatically set to actives
    * @return  {Array}  An array of two Player objects.
    */
@@ -44,7 +35,16 @@ class Game {
   }
 
   playToken() {
+    const columnLocation = this.activePlayer.activeToken.columnLocation,
+      column = this.board.spaces[columnLocation],
+      targetSpace = this.board.nextSpace(columnLocation);
 
+    if (column.length) {
+      this.ready = false;
+      this.activePlayer.activeToken.drop(targetSpace, function () {
+        console.log('Reset!')
+      });
+    }
   }
 
   /**
@@ -58,7 +58,7 @@ class Game {
       } else if (e.key === 'ArrowRight') {
         this.activePlayer.activeToken.moveRight(this.board.columns);
       } else if (e.key === 'ArrowDown') {
-        this.activePlayer.activeToken.drop(this.board.nextSpace(this.columnLocation));
+        this.playToken();
       }
     }
   }
