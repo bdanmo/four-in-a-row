@@ -61,4 +61,14 @@ class Token {
       this.htmlToken.style.left = this.offsetLeft + 76;
     }
   }
+
+  /** 
+   * Drops html token into targeted board space.
+   * @param   {Object}   target - Targeted space for dropped token.
+   * @param   {function} reset  - The reset function to call after the drop animation has completed.
+   */
+  drop(target, reset) {
+    this.dropped = true;
+    console.log('dropped!')
+  }
 }
