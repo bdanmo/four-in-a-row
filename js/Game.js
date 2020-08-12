@@ -59,7 +59,7 @@ class Game {
    * Checks for a winning move
    * @param {token} target - The last space that a token was dropped into
    * @returns {boolean} Boolena indicating whether or not the last move was a winning move.
-   * @author Ashley Bouchet
+   * @author Ashley Boucher
    */
   checkForWin(target) {
     const owner = target.token.owner;
@@ -119,7 +119,6 @@ class Game {
   /** 
    * Switches active player. 
    */
-
   switchPlayer() {
     for (let player of this.players) {
       if (player.active === true) {
@@ -128,6 +127,16 @@ class Game {
         player.active === true;
       }
     }
+  }
+
+  /** 
+   * Displays game over message.
+   * @param {string} message - Game over message.      
+   */
+  switchPlayer(message) {
+    const messageDiv = document.getElementById('game-over');
+    messageDiv.innerText = message;
+    messageDiv.style.display = 'block';
   }
 
   /**
