@@ -121,11 +121,7 @@ class Game {
    */
   switchPlayer() {
     for (let player of this.players) {
-      if (player.active === true) {
-        player.active === false;
-      } else if (player.active === false) {
-        player.active === true;
-      }
+      player.active = !player.active;
     }
   }
 
