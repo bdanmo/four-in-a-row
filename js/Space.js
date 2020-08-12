@@ -14,6 +14,18 @@ class Space {
     this.token = null;
   }
 
+  /**
+   * Checks if space has an associated token to find its owner
+   * @return  {(null|Object)} Returns null or the owner object of the space's associated token.
+   */
+  get owner() {
+    if (this.token) {
+      return this.token.owner;
+    } else {
+      return null;
+    }
+  }
+
   /** Draws an SVG space associated with the instance the method is called on. */
   drawSVGspace() {
     const svgSpace = document.createElementNS(
@@ -31,15 +43,11 @@ class Space {
   }
 
   /**
-   * Checks if space has an associated token to find its owner
-   * @return  {(null|Object)} Returns null or the owner object of the space's associated token.
+   * Updates space to reflect a token has been dropped into it.
+   * @param {Object} token - The dropped token
    */
-  get owner() {
-    if (this.token) {
-      return this.token.owner;
-    } else {
-      return null;
-    }
+  mark(token) {
+    this.token = token;
   }
 
 }
