@@ -129,7 +129,7 @@ class Game {
    * Displays game over message.
    * @param {string} message - Game over message.      
    */
-  switchPlayer(message) {
+  gameOver(message) {
     const messageDiv = document.getElementById('game-over');
     messageDiv.innerText = message;
     messageDiv.style.display = 'block';
