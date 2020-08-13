@@ -2,8 +2,9 @@ class Game {
   constructor() {
     this.board = new Board();
     this.players = this.createPlayers();
-    this.ready = null;
+    this.ready = false;
   }
+
 
   /**
    * Gets the active player
@@ -13,6 +14,7 @@ class Game {
     return this.players.find(player => player.active = true)
   }
 
+
   /**
    * Creates two player objects, p1 is automatically set to actives
    * @return  {Array}  An array of two Player objects.
@@ -20,11 +22,11 @@ class Game {
   createPlayers() {
     const players = [
       new Player("Player 1", 1, "#e15258", true),
-      new Player("Player 2", 2, "#e59a13"),
+      new Player("Player 2", 2, "#e59a13")
     ];
-
     return players;
   }
+
 
   /** Gets game ready for play */
   startGame() {
@@ -34,9 +36,13 @@ class Game {
     this.ready = true;
   }
 
+
+  /**
+   * Finds Space object to drop Token into, drops Token
+   */
   playToken() {
-    const activeToken = this.activePlayer.activeToken;
-    const targetColumn = this.board.spaces[activeToken.columnLocation];
+    let activeToken = this.activePlayer.activeToken;
+    let targetColumn = this.board.spaces[activeToken.columnLocation];
     let targetSpace;
 
     for (let space of targetColumn) {
@@ -54,6 +60,7 @@ class Game {
       //console.log(targetSpace);
     }
   }
+
 
   /** 
    * Checks for a winning move
@@ -116,14 +123,18 @@ class Game {
     return win;
   }
 
+
   /** 
    * Switches active player. 
    */
   switchPlayer() {
     for (let player of this.players) {
       player.active = !player.active;
+      console.log(player);
     }
+    console.log(this.players);
   }
+
 
   /** 
    * Displays game over message.
@@ -135,6 +146,7 @@ class Game {
     messageDiv.style.display = 'block';
   }
 
+
   /**
    * Updates game state after token is dropped.
    * @param   {Object}  token  -  The token that's being dropped.
@@ -142,19 +154,24 @@ class Game {
    */
   updateGameState(token, target) {
     target.mark(token);
-    if (this.checkForWin(target)) {
-      this.gameOver(`${token.owner.name} wins!`);
-    } else {
-      this.switchPlayer();
-    }
 
-    if (this.activePlayer.hasTokens) {
-      this.activePlayer.activeToken.drawHTMLtoken();
-      this.ready = true;
+    if (this.checkForWin(target)) {
+
+      this.gameOver(`${target.owner.name} wins!`);
+
     } else {
-      this.gameOver(`Game over! You are out of tokens!`);
+
+      this.switchPlayer();
+
+      if (this.activePlayer.hasTokens) {
+        this.activePlayer.activeToken.drawHTMLtoken();
+        this.ready = true;
+      } else {
+        this.gameOver(`Game over! You are out of tokens!`);
+      }
     }
   }
+
 
   /**
    * Branches code, depending on what key player presses

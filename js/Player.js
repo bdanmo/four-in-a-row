@@ -11,7 +11,7 @@ class Player {
     this.name = name;
     this.id = id;
     this.color = color;
-    this.active = false;
+    this.active = active;
     this.tokens = this.collectTokens(21);
   }
 
@@ -36,22 +36,23 @@ class Player {
    * @return {Boolean} 
    */
   get hasTokens() {
-    return this.unusedTokens.length = 0 ? false : true;
-
-    /**
-     * Creates token objects for player
-     * @param   {integer}   num - Number of token objects to be created
-     * @return  {array}     tokens - an array of new Token class instances
-     */
-    collectTokens(num) {
-      const tokens = [];
-      for (let i = 0; i < num; i++) {
-        let token = new Token(this, i);
-        tokens.push(token);
-      }
-      return tokens;
-    }
-
-
-
+    return this.unusedTokens.length == 0 ? false : true;
   }
+
+  /**
+   * Creates token objects for player
+   * @param   {integer}   num - Number of token objects to be created
+   * @return  {array}     tokens - an array of new Token class instances
+   */
+  collectTokens(num) {
+    const tokens = [];
+    for (let i = 0; i < num; i++) {
+      let token = new Token(this, i);
+      tokens.push(token);
+    }
+    return tokens;
+  }
+
+
+
+}
