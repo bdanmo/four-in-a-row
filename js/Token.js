@@ -65,13 +65,13 @@ class Token {
   /** 
    * Drops html token into targeted board space.
    * @param   {Space}   target - Targeted space for dropped token.
-   * @param   {function} reset  - The reset function to call after the drop animation has completed.
+   * @param   {function} resetCallback  - The reset function to call after the drop animation has completed.
    */
-  drop(target, reset) {
+  drop(target, resetCallback) {
     this.dropped = true;
 
     $(this.htmlToken).animate({
       top: (target.y * target.diameter)
-    }, 750, 'easeOutBounce', reset);
+    }, 750, 'easeOutBounce', resetCallback);
   }
 }

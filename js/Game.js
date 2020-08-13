@@ -46,12 +46,12 @@ class Game {
     }
 
     if (targetSpace) {
-      this.ready = false;
+      const game = this;
+      game.ready = false;
       activeToken.drop(targetSpace, function () {
-        console.log('Reset!');
+        game.updateGameState(activeToken, targetSpace);
       });
-      targetSpace.token = activeToken;
-      console.log(targetSpace);
+      //console.log(targetSpace);
     }
   }
 
@@ -133,6 +133,27 @@ class Game {
     const messageDiv = document.getElementById('game-over');
     messageDiv.innerText = message;
     messageDiv.style.display = 'block';
+  }
+
+  /**
+   * Updates game state after token is dropped.
+   * @param   {Object}  token  -  The token that's being dropped.
+   * @param   {Object}  target -  Targeted space for dropped token.
+   */
+  updateGameState(token, target) {
+    target.mark(token);
+    if (this.checkForWin(target)) {
+      this.gameOver(`${token.owner.name} wins!`);
+    } else {
+      this.switchPlayer();
+    }
+
+    if (this.activePlayer.hasTokens) {
+      this.activePlayer.activeToken.drawHTMLtoken();
+      this.ready = true;
+    } else {
+      this.gameOver(`Game over! You are out of tokens!`);
+    }
   }
 
   /**

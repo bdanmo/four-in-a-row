@@ -32,6 +32,18 @@ class Player {
   }
 
   /**
+   * Check if a player has any undropped tokens left
+   * @return {Boolean} 
+   */
+  get hasTokens() {
+    if (this.unusedTokens.length > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  /**
    * Creates token objects for player
    * @param   {integer}   num - Number of token objects to be created
    * @return  {array}     tokens - an array of new Token class instances
@@ -44,5 +56,7 @@ class Player {
     }
     return tokens;
   }
+
+
 
 }
