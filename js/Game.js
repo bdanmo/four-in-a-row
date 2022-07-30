@@ -11,7 +11,7 @@ class Game {
    * @return {object} player - the active player 
    */
   get activePlayer() {
-    return this.players.find(player => player.active = true)
+    return this.players.find(player => player.active === true)
   }
 
 
@@ -130,9 +130,7 @@ class Game {
   switchPlayer() {
     for (let player of this.players) {
       player.active = !player.active;
-      console.log(player);
     }
-    console.log(this.players);
   }
 
 
@@ -162,6 +160,7 @@ class Game {
     } else {
 
       this.switchPlayer();
+      console.log(this.players);
 
       if (this.activePlayer.hasTokens) {
         this.activePlayer.activeToken.drawHTMLtoken();
